@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Slide, toast, ToastContainer } from 'react-toastify';
 
 const App = () => {
   let [searchActive, setSearchActive] = useState(false);
@@ -17,7 +18,7 @@ const App = () => {
           setSearchActive(false);
           setWeatherData(finalRes);
         } else {
-          alert('Location not found');
+          toast.error('Location not found');
         }
       });
     setLocation('');
@@ -128,6 +129,20 @@ const App = () => {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-left"
+        autoClose={1000}
+        limit={2}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        transition={Slide}
+      />
     </div>
   );
 };
