@@ -1,4 +1,7 @@
 /* WeatherApp.css */
+*{
+  color:black
+}
 .weather-app {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
