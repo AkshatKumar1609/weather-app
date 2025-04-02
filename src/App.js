@@ -14,7 +14,7 @@ const App = () => {
       .then((res) => res.json())
       .then((finalRes) => {
         console.log(finalRes);
-        if (finalRes.cod != 404) {
+        if (finalRes.cod === 200) {
           setSearchActive(false);
           setWeatherData(finalRes);
         } else {
@@ -132,7 +132,7 @@ const App = () => {
       <ToastContainer
         position="top-left"
         autoClose={1000}
-        limit={2}
+        limit={0}
         hideProgressBar={false}
         newestOnTop
         closeOnClick
