@@ -10,7 +10,7 @@ const App = () => {
   function getData(event) {
     event.preventDefault();
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=dae23a146709930b72d3e6482604b29f&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
       .then((res) => res.json())
       .then((finalRes) => {
         console.log(finalRes);
